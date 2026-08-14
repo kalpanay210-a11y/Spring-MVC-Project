@@ -25,7 +25,7 @@ public class WelcomeController2 {
 
 	@RequestMapping("/Path-var/{id}")
 	public String intro(@PathVariable(name = "id") int id, Model model) {
-		model.addAttribute("user", "Sorry this" +id+ "is not found in our DB.");
+		model.addAttribute("user", "Sorry this " +id+ " is not found in our DB.");
 		System.out.println("WelcomeController2 (API1) -> intro()" + id);
 		return "intro";
 	}
