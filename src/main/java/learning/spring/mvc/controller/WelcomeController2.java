@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping("/API2")
@@ -17,10 +18,11 @@ public class WelcomeController2 {
 	}
 	
 	@RequestMapping("/login")
+	@ResponseBody
 	public String login(@RequestParam(name ="login" ,defaultValue = "My-Default-LoginName") String name, Model model ) {
 		model.addAttribute("login", name);
 		System.out.println("WelcomeController2 (API1) -> login()" +name);
-		return "login";
+		return "login " +name;
 	}
 
 	@RequestMapping("/Path-var/{id}")
