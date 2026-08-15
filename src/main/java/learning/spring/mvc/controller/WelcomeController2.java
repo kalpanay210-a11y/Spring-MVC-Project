@@ -2,7 +2,7 @@ package learning.spring.mvc.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -25,10 +25,12 @@ public class WelcomeController2 {
 		return "login " +name;
 	}
 
-	@RequestMapping("/Path-var/{id}")
-	public String intro(@PathVariable(name = "id") int id, Model model) {
-		model.addAttribute("user", "Sorry this " +id+ " is not found in our DB.");
-		System.out.println("WelcomeController2 (API1) -> intro()" + id);
-		return "intro";
+	@RequestMapping("/getCookies")
+	public String getCookies(
+	        @CookieValue(name = "JSESSIONID") String JSESSIONID, Model model) {
+	    
+	    model.addAttribute("sessionIdVal", "Your JSESSIONID is " + JSESSIONID);
+	    System.out.println("JSESSIONID: " + JSESSIONID);
+	    return "cookieVal";
 	}
 }
