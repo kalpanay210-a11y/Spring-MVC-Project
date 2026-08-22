@@ -8,14 +8,14 @@
 	<packaging>war</packaging>
 
 	<dependencies>
-		<!-- Valid Spring Web MVC Version for Tomcat 10/11 -->
+		<!-- Spring Web MVC -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 			<version>6.1.5</version>
 		</dependency>
 
-		<!-- Servlet API Dependency Required for Jakarta/Tomcat 10+ -->
+		<!-- Servlet API Required for Jakarta/Tomcat 10+ -->
 		<dependency>
 			<groupId>jakarta.servlet</groupId>
 			<artifactId>jakarta.servlet-api</artifactId>
@@ -23,16 +23,14 @@
 			<scope>provided</scope>
 		</dependency>
 
-		<!-- Source:
-		https://mvnrepository.com/artifact/jakarta.servlet.jsp.jstl/jakarta.servlet.jsp.jstl-api -->
-		<!-- 1. JSTL API -->
+		<!-- JSTL API -->
 		<dependency>
 			<groupId>jakarta.servlet.jsp.jstl</groupId>
 			<artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
 			<version>3.0.0</version>
 		</dependency>
 
-		<!-- 2. JSTL Implementation (Required for Tomcat 10+) -->
+		<!-- JSTL Implementation -->
 		<dependency>
 			<groupId>org.glassfish.web</groupId>
 			<artifactId>jakarta.servlet.jsp.jstl</artifactId>
@@ -46,7 +44,6 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.13.0</version>
 				<configuration>
-					<!-- Stable Java Version (17 ya 21 recommended hai) -->
 					<release>17</release>
 				</configuration>
 			</plugin>
