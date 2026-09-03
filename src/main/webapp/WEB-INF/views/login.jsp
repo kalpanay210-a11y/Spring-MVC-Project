@@ -1,4 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!-- Spring Form Taglib Directive Added -->
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,11 +11,11 @@
 
     <h2>Login</h2>
 
-    <!-- Error Message Display -->
+    <!-- Error/Success Messages -->
     <h3 style="color:red;">${error}</h3>
     <h3 style="color:green;">${msg}</h3>
 
-    <form action="login" method="post">
+    <form:form action="${pageContext.request.contextPath}/login" method="post" modelAttribute="user">
         <div>
             <label>Username:</label>
             <input type="text" name="username" required />
@@ -24,10 +27,11 @@
         </div>
         <br/>
         <button type="submit">Login</button>
-    </form>
+    </form:form>
 
     <br/>
-    <a href="signup">Don't have an account? Signup here</a>
+    <!-- Fixed Signup Context Path -->
+    <a href="${pageContext.request.contextPath}/signup">Don't have an account? Signup here</a>
 
 </body>
 </html>

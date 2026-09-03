@@ -12,14 +12,15 @@ import org.springframework.web.servlet.view.JstlView;
 @EnableWebMvc
 @ComponentScan(basePackages = "learning.spring.mvc")
 @Configuration
-public class SpringConfig implements WebMvcConfigurer{
-    
-	@Bean
-	public ViewResolver viewResolver() {
-		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
-		viewResolver.setViewClass(JstlView.class);
-		viewResolver.setPrefix("/WEB-INF/VIWES/");
-		viewResolver.setSuffix(".jsp");
-		return viewResolver;
-	}
+public class SpringConfig implements WebMvcConfigurer {
+
+    @Bean
+    public ViewResolver viewResolver() {
+        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
+        viewResolver.setViewClass(JstlView.class);
+        // Typo fixed: Ensure folder name in webapp matches this path
+        viewResolver.setPrefix("/WEB-INF/views/"); 
+        viewResolver.setSuffix(".jsp");
+        return viewResolver;
+    }
 }

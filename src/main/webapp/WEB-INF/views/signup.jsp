@@ -69,9 +69,7 @@
 
     <h2>User Sign Up</h2>
 
-    <form:form action="${pageContext.request.contextPath}/signup"
-               method="post"
-               modelAttribute="user">
+    <form:form action="${pageContext.request.contextPath}/signup" method="post" modelAttribute="user">
 
         <!-- Username -->
         <label>Username</label>
