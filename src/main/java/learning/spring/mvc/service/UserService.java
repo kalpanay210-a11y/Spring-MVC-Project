@@ -21,7 +21,7 @@ public class UserService {
 
 	public User validateUser(String username, String password) {
 
-		boolean flag = false;
+//		boolean flag = false;
 		for (User user : listOfUser) {
 			if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
 				
